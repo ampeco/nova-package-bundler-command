@@ -65,7 +65,7 @@ class PublishCommand extends Command
         }
 
         if ($content) {
-            $outputPath = public_path($service->outputPath());
+            $outputPath = resource_path($service->outputPath());
             $this->components->task("Writing file [$outputPath]", function () use ($filesystem, $outputPath, $content) {
                 $filesystem->ensureDirectoryExists(dirname($outputPath));
                 $filesystem->put($outputPath, $content);
