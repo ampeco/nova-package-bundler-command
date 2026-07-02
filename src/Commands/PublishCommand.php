@@ -29,7 +29,7 @@ class PublishCommand extends Command
         ScriptAssetService $scriptAssetService,
         StyleAssetService $styleAssetService,
     ): int {
-        ServingNova::dispatch(new Request());
+        ServingNova::dispatch(app(), new Request());
 
         $this->bootTools();
         $this->process($filesystem, $scriptAssetService);
